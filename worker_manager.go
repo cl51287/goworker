@@ -37,7 +37,7 @@ func (workerManager *WorkerManager) StartWorking() {
 
 	for true {
 		task := <-workerManager.taskQueue
-		worker := workerManager.dispatcher.dispatch(workerManager.workers)
+		worker := workerManager.dispatcher.Dispatch(workerManager.workers)
 		go worker.Handle(task)
 	}
 }

@@ -66,5 +66,5 @@ func (workShop *WorkShop) startWorkProcess() {
 		panic("worker manager not set")
 	}
 
-	workShop.workerManager.StartWorking()
+	go workShop.workerManager.StartWorking()
 }
