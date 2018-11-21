@@ -16,19 +16,22 @@ func NewWorkerManager(dispatcer Dispatcher, workers []Worker) *WorkerManager {
 	}
 }
 
-func (workerManager *WorkerManager) SetTaskQueueLen(len int) {
-	workerManager.taskQueueLen = len
+func (wm *WorkerManager) AddWorker(workerName string, worker Worker) bool {
+
 }
 
-func (workerManager *WorkerManager) AddTask(task *Task) {
-	workerManager.taskQueue <- task
+func (wm *WorkerManager) HasWorker(workerName string) bool {
+
 }
 
-func (workerManager *WorkerManager) SetDispatcher(dispatcher Dispatcher) {
-	workerManager.dispatcher = dispatcher
+func (wm *WorkerManager) DelWorker(workerName string) bool {
+
 }
 
-func (workerManager *WorkerManager) StartWorking() {
+func (workerManager *WorkerManager) SetAgent(agent Agent) {
+}
+
+func (workerManager *WorkerManager) Run() {
 	if workerManager.dispatcher == nil {
 		panic("dispatcher not set")
 	}

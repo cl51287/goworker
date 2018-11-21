@@ -1,5 +1,9 @@
 package goworker
 
 type Producer interface {
-	Produce() []*Task
+	SetAgent(Agent)
+
+	Stop()
+
+	Start()
 }

@@ -6,29 +6,60 @@ import (
 
 // WorkShop is the main process
 type WorkShop struct {
-	workerManager *WorkerManager
-	producers     []Producer
+	workerManager   *WorkerManager
+	producerManager *ProducerManager
 }
 
-func NewWorkShop(workerManager *WorkerManager, producers []Producer) *WorkShop {
+func NewWorkShop() *WorkShop {
 	return &WorkShop{
 		workerManager: workerManager,
 		producers:     producers,
 	}
 }
 
+func (ws *WorkShop) AddProducer(producerName string, producer Producer) bool {
+
+}
+
+func (ws *WorkShop) AddStoppedProducer(producerName string, producer Producer) bool {
+
+}
+
+func (ws *WorkShop) DelProducer(producerName string) bool {
+
+}
+
+func (ws *WorkShop) StartProducer(producerName string) bool {
+
+}
+
+func (ws *WorkShop) StopProducer(producerName string) bool {
+
+}
+
+func (ws *WorkShop) AddWorker(workerName string, worker Worker) bool {
+
+}
+
+func (ws *WorkShop) AddStoppedWorker(workerName string, worker Worker) bool {
+
+}
+
+func (ws *WorkShop) DelWorker(workerName string) bool {
+
+}
+
+func (ws *WorkShop) StartWorker(workerName string) bool {
+
+}
+
+func (ws *WorkShop) StopWorker(workerName string) bool {
+
+}
+
 // SetWorkerManager is workerManager setter
 func (workShop *WorkShop) SetWorkerManager(workManager *WorkerManager) {
 	workShop.workerManager = workManager
-}
-
-// AddProducer is the producer add method
-func (workShop *WorkShop) AddProducer(producer Producer) {
-	workShop.producers = append(workShop.producers, producer)
-}
-
-func (workShop *WorkShop) SetProducers(producers []Producer) {
-	workShop.producers = producers
 }
 
 // Run is ready to work
