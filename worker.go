@@ -2,7 +2,7 @@ package goworker
 
 // Worker is a interface
 type Worker interface {
-	SetAgent(Agent)
+	AddTask(*Task)
 
 	Stop()
 

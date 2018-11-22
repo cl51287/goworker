@@ -1,9 +1,9 @@
 package goworker
 
 type Producer interface {
-	SetAgent(Agent)
+	SetProducerManager(*ProducerManager)
 
-	Stop()
+	Start() bool
 
-	Start()
+	Stop() bool
 }
